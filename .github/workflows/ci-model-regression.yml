@@ -387,7 +387,7 @@ jobs:
 
       - name: Upload an artifact with the report
         if: steps.set_dataset_config_vars.outputs.is_dataset_exists == 'true' && steps.set_dataset_config_vars.outputs.is_config_exists == 'true'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: report.json
           path: ./report.json
@@ -600,7 +600,7 @@ jobs:
           cat $SUMMARY_FILE
 
       - name: Upload an artifact with the report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: steps.set_dataset_config_vars.outputs.is_dataset_exists == 'true' && steps.set_dataset_config_vars.outputs.is_config_exists == 'true'
         with:
           name: report.json
